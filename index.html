@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Vite App</title>
+  <style>
+    .loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgb(255 255 255 / 0.2);
+      backdrop-filter: blur(15px);
+      z-index: 99999999999999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-direction: column;
+      transform: perspective(300px);
+      transform-style: preserve-3d;
+    }
+
+    .loader svg {
+      width: min(90px, 40vw);
+      perspective-origin: 150px;
+      transform-style: preserve-3d;
+      fill: #59aca4;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .loader__bar {
+      width: min(300px, 90vw);
+      height: 10px;
+      border: 0.5px solid rgb(0 0 0 / 0.1);
+      border-radius: 10vmax;
+      position: relative;
+    }
+
+    .loader__bar::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto auto 0;
+      border-radius: 10vmax;
+      height: 100%;
+      width: 50%;
+      background: #59aca480;
+      animation: move-bar 1s ease-out infinite alternate;
+    }
+
+    @keyframes move-bar {
+      from {
+        transform: translateX(0%);
+      }
+
+      to {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index.bb029ce5.js"></script>
+  <link rel="stylesheet" href="/assets/index.7de94c42.css">
+</head>
+
+<body>
+  <!-- Loader -->
+  <section class="loader" id="loader">
+    <svg viewBox="0 0 70 70">
+      <use href="#logo"></use>
+    </svg>
+    <span class="loader__bar"></span>
+  </section>
+  <div id="app"></div>
+  
+
+
+  <svg style="display: none;">
+    <symbol id="no-search" viewBox="0 0 30 30">
+      <path
+        d="M13 3C7.4889941 3 3 7.4889982 3 13C3 18.511002 7.4889941 23 13 23C15.396509 23 17.597385 22.148986 19.322266 20.736328L25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969L20.736328 19.322266C22.148985 17.597385 23 15.396507 23 13C23 7.4889982 18.511006 3 13 3 z M 13 5C17.430126 5 21 8.5698765 21 13C21 17.430123 17.430126 21 13 21C8.5698737 21 5 17.430123 5 13C5 8.5698765 8.5698737 5 13 5 z M 9.5 10 A 1.5 1.5 0 0 0 9.5 13 A 1.5 1.5 0 0 0 9.5 10 z M 16.5 10 A 1.5 1.5 0 0 0 16.5 13 A 1.5 1.5 0 0 0 16.5 10 z M 13 15C10.940666 15 9.4023437 16.197266 9.4023438 16.197266 A 1.000787 1.000787 0 1 0 10.597656 17.802734C10.597656 17.802734 11.745334 17 13 17C14.254666 17 15.402344 17.802734 15.402344 17.802734 A 1.000787 1.000787 0 1 0 16.597656 16.197266C16.597656 16.197266 15.059334 15 13 15 z" />
+    </symbol>
+
+    <symbol id="logo" viewBox="0 0 70 70">
+      <path
+        d="M13.545,4A9.594,9.594,0,0,0,4,13.545V64.455A9.594,9.594,0,0,0,13.545,74H53.318a3.182,3.182,0,0,0,2.25-.932l17.5-17.5A3.182,3.182,0,0,0,74,53.318V13.545A9.594,9.594,0,0,0,64.455,4Zm0,6.364H64.455a3.131,3.131,0,0,1,3.182,3.182V51.727H58.091a6.362,6.362,0,0,0-6.364,6.364v9.545H13.545a3.131,3.131,0,0,1-3.182-3.182V13.545A3.131,3.131,0,0,1,13.545,10.364Zm9.545,15.909a3.182,3.182,0,1,0,0,6.364H35.818a3.182,3.182,0,1,0,0-6.364Zm25.455,0a3.182,3.182,0,1,0,0,6.364h6.364a3.182,3.182,0,1,0,0-6.364ZM23.091,39a3.182,3.182,0,1,0,0,6.364H48.545a3.182,3.182,0,1,0,0-6.364Z"
+        transform="translate(-4 -4)" />
+    </symbol>
+
+    <symbol id="no-user" viewBox="0 0 32 32">
+      <path
+        d="M15 3L15 7L17 7L17 3 Z M 7 5L7 27L16.59375 27C17.789063 29.917969 20.660156 32 24 32C28.40625 32 32 28.40625 32 24C32 19.933594 28.933594 16.5625 25 16.0625L25 5L18 5L18 7L23 7L23 16.0625C21.707031 16.226563 20.496094 16.699219 19.46875 17.40625C19.257813 17.195313 19.027344 17.011719 18.78125 16.84375C19.523438 16.117188 20 15.113281 20 14C20 11.800781 18.199219 10 16 10C13.800781 10 12 11.800781 12 14C12 15.113281 12.476563 16.117188 13.21875 16.84375C11.886719 17.746094 11 19.28125 11 21L13 21C13 19.332031 14.332031 18 16 18C16.761719 18 17.441406 18.285156 17.96875 18.75C16.746094 20.15625 16 22 16 24C16 24.339844 16.019531 24.667969 16.0625 25L9 25L9 7L14 7L14 5 Z M 16 12C17.117188 12 18 12.882813 18 14C18 15.117188 17.117188 16 16 16C14.882813 16 14 15.117188 14 14C14 12.882813 14.882813 12 16 12 Z M 24 18C27.324219 18 30 20.675781 30 24C30 27.324219 27.324219 30 24 30C20.675781 30 18 27.324219 18 24C18 20.675781 20.675781 18 24 18 Z M 21.71875 20.28125L20.28125 21.71875L22.5625 24L20.28125 26.28125L21.71875 27.71875L24 25.4375L26.28125 27.71875L27.71875 26.28125L25.4375 24L27.71875 21.71875L26.28125 20.28125L24 22.5625Z" />
+   </symbol>
+  </svg>
+</body>
+
+</html>
